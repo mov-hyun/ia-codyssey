@@ -37,14 +37,22 @@ pwd ## 현재 위치 확인
 
 ls -la ## ls: 목록 확인, -l: long format (자세히), -a: all(숨김 파일 포함) 
 total 48
+drwxr-x---+ 22 east#### east#### 704 Apr 2 12:09 . 
 ...
 
 mkdir -p ~/dev/practice01 ## mkdir: 디렉토리 생성 -p: --parents 부모 디렉토리가 없으면 함께 만들어 줌
 cd ~/dev/practice01 ## change directory 해당 디렉토리로 이동
+pwd
+/Users/east####/dev/practice01
+
+touch hello.txt # hello.txt 파일 생성
+
+echo 'Hello, Dev!' > hello.txt # 파일 내용 작성
+cat hello.txt # 파일 내용 확인
 
 
 ```
-pwd
+
 ### 2) Docker 운영/검증 로그
 ### 3) Dockerfile 기반 웹 서버 컨테이너
 ### 4) 포트 매핑 접속 증거
