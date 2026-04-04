@@ -1,5 +1,44 @@
 # ia-codyssey
-Github과 Codyssey 연동용
+## Codyssey Project
+2026.04.04 ~
+
+### 구조도
+
+``` 프로젝트 구조도
+ia-codyssey/
+├── .gitignore
+├── README.md
+├── assets/
+│   └── images/
+├── E1/
+│   ├── E1-1_workstation_setup/
+│   │   └── README.md
+│   ├── E1-2/
+│   │   ├── README.md
+│   │   └── src/
+│   │       └── main.py
+│   └── E1-3/
+│       ├── README.md
+│       └── src/
+│           └── main.py
+├── E2/
+│   └── E2-1/
+│       ├── README.md
+│       └── src/
+│           └── main.py
+└── E3/
+    └── E3-1/
+        └── README.md
+```
+
+### E1
+- [E1-1 Workstation Setup](./E1/E1-1_workstation_setup)
+    - AI/SW 개발 워크스테이션 구축
+- [E1-2](./E1/E1-2)
+- [E1-3](./E1/E1-3)
+
+### E2
+- [E2-1](./E2/E2-1)
 
 ## 프로젝트 개요 (목표)
 - 터미널 기본 조작 이해 (현재 위치 확인, 목록확인, 이동, 생성 복사, 이동/이름변경, 삭제 등)
