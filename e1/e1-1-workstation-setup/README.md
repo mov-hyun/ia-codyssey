@@ -38,17 +38,17 @@
 
 ### 1. 터미널 기본 명령어
 
-#### 현재 위치 확인
-```bash
-$ pwd
-/Users/east0000/ia-codyssey/e1/e1-1-workstation-setup
-```
+    #### 현재 위치 확인
+    ```bash
+    $ pwd
+    /Users/east0000/ia-codyssey/e1/e1-1-workstation-setup
+    ```
 
-#### 현재 위치 확인
-```bash
-$ pwd
-/Users/east0000/ia-codyssey/e1/e1-1-workstation-setup
-```
+    #### 현재 위치 확인
+    ```bash
+    $ pwd
+    /Users/east0000/ia-codyssey/e1/e1-1-workstation-setup
+    ```
 
 
 ### 2. 권한 부여
