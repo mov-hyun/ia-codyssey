@@ -74,12 +74,8 @@ drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 .
 drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 ..
 -rw-r--r--  1 east0000  east0000  1618 Apr  4 17:55 README.md
 ```
-첫 글자: 파일타입
-d = 디렉토리, - = 일반 파일, l = 링크
-r = read/4, w = write/2, x = execute/1
-1그룹: 소유자(Owner) 권한
-2그룹: 그룹(Group) 권한
-3그룹: 그 외 모든 사람(Others) 
+첫 글자: 파일타입 d = 디렉토리, - = 일반 파일, l = 링크 r = read/4, w = write/2, x = execute/1    
+1그룹: 소유자(Owner) 권한 2그룹: 그룹(Group) 권한 3그룹: 그 외 모든 사람(Others) 
 
 
 ### 2. Docker 기본 명령어
