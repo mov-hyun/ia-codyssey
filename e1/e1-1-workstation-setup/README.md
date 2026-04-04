@@ -4,6 +4,7 @@
 
 
 ## 프로젝트 개요
+
 - [1. 터미널 기본 명령어 & 권한 부여](#1-터미널-기본-명령어--권한-부여)
 - [2. Docker 기본 명령어 & 실습](#2-docker-기본-명령어--실습)
 - [3. Dockerfile 기반 커스텀 이미지 제작](#3-dockerfile-기반-커스텀-이미지-제작)
@@ -60,7 +61,7 @@
 
 ```bash
 $ pwd
-/Users/east0000/ia-codyssey/e1/e1-1-workstation-setup
+/Users/east1111/ia-codyssey/e1/e1-1-workstation-setup
 ```
 
 ### 1.3 파일과 디렉토리 목록과 권한 확인
@@ -69,9 +70,9 @@ $ pwd
 $ ls -la
 사용자명@호스트명(혹은 ip주소)  e1-1-workstation-setup % ls -la
 total 8 # 현재 디렉토리의 전체 용량: 8블록(8x512byte)
-drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 .
-drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 ..
--rw-r--r--  1 east0000  east0000  1618 Apr  4 17:55 README.md
+drwxr-xr-x  3 east1111  east1111    96 Apr  4 16:12 .
+drwxr-xr-x  3 east1111  east1111    96 Apr  4 16:12 ..
+-rw-r--r--  1 east1111  east1111  1618 Apr  4 17:55 README.md
 ```
 - 첫 글자는 파일타입 `d` = 디렉토리, `-` = 일반 파일, `l` = 링크 `r` = read/4, `w` = write/2, `x` = execute/1    
 - 1그룹: 소유자(Owner) 2그룹: 그룹(Group) 3그룹: 그 외 모든 사람(Others)   
@@ -81,39 +82,39 @@ drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 ..
 ### 1.4 디렉토리 생성 및 이동
 
 ```bash
-east0000@0000 e1-1-workstation-setup % mkdir hi # hi 디렉토리 생성
-east0000@0000 e1-1-workstation-setup % ls      # 디렉토리 생성 확인
+east1111@0000 e1-1-workstation-setup % mkdir hi # hi 디렉토리 생성
+east1111@0000 e1-1-workstation-setup % ls      # 디렉토리 생성 확인
 hi              README.md
-east0000@0000 e1-1-workstation-setup % cd hi   # 디렉토리 이동
-east0000@0000 hi % pwd                         # 현재 위치 확인
-/Users/east0000/ia-codyssey/e1/e1-1-workstation-setup/hi
+east1111@0000 e1-1-workstation-setup % cd hi   # 디렉토리 이동
+east1111@0000 hi % pwd                         # 현재 위치 확인
+/Users/east1111/ia-codyssey/e1/e1-1-workstation-setup/hi
 ```
 
 ### 1.5 파일 생성 및 내용 추가, 확인
 
 ```bash
-east0000@0000 hi % touch hello.txt # 파일 생성
-east0000@0000 hi % cat hello.txt   # 파일 내용 확인 -> 비어있음
-east0000@0000 hi % echo "hello codyssey!" > hello.txt # 파일 내용 추가
+east1111@0000 hi % touch hello.txt # 파일 생성
+east1111@0000 hi % cat hello.txt   # 파일 내용 확인 -> 비어있음
+east1111@0000 hi % echo "hello codyssey!" > hello.txt # 파일 내용 추가
 dquote>    
-east0000@0000 hi %   # !와 "가 붙어 히스토리 확장으로 잘못 해석 -> 자세한 내용 트러블 슈팅 항목 참고
-east0000@0000 hi % echo 'hello codyssey!' > hello.txt # 큰따옴표(")를 작은따옴표(')로 교체해 해결
-east0000@0000 hi % cat hello.txt # 파일 내용 확인
+east1111@0000 hi %   # !와 "가 붙어 히스토리 확장으로 잘못 해석 -> 자세한 내용 트러블 슈팅 항목 참고
+east1111@0000 hi % echo 'hello codyssey!' > hello.txt # 큰따옴표(")를 작은따옴표(')로 교체해 해결
+east1111@0000 hi % cat hello.txt # 파일 내용 확인
 hello codyssey!
 ```
 
 ### 1.6 파일 복사, 이름 변경, 제거
 
 ```bash
-east0000@0000 hi % cp hello.txt copy.txt # 파일 복사
-east0000@0000 hi % ls # 리스트 확인
+east1111@0000 hi % cp hello.txt copy.txt # 파일 복사
+east1111@0000 hi % ls # 리스트 확인
 copy.txt        hello.txt
-east0000@0000 hi % mv copy.txt renamed.txt # 파일 이름 변경
-east0000@0000 hi % ls # 이름 변경 확인
+east1111@0000 hi % mv copy.txt renamed.txt # 파일 이름 변경
+east1111@0000 hi % ls # 이름 변경 확인
 hello.txt       renamed.txt
-east0000@0000 hi % cd .. # 상위 디렉토리로 이동
-east0000@0000 e1-1-workstation-setup % rm -r hi # 디렉토리 삭제
-east0000@0000 e1-1-workstation-setup % ls # 삭제 확인
+east1111@0000 hi % cd .. # 상위 디렉토리로 이동
+east1111@0000 e1-1-workstation-setup % rm -r hi # 디렉토리 삭제
+east1111@0000 e1-1-workstation-setup % ls # 삭제 확인
 README.md
 ```
 `rm` 파일삭제, `-r` 폴더삭제, `-f` 강제삭제, `-i` 삭제 전 확인
@@ -121,38 +122,38 @@ README.md
 ### 1.7 파일 권한 변경
 
 ```bash
-east0000@0000 e1-1-workstation-setup % touch file.txt # 파일 생성
-east0000@0000 e1-1-workstation-setup % ls -la # 파일 권한 확인
+east1111@0000 e1-1-workstation-setup % touch file.txt # 파일 생성
+east1111@0000 e1-1-workstation-setup % ls -la # 파일 권한 확인
 total 16
-drwxr-xr-x  4 east0000  east0000   128 Apr  4 19:07 .
-drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 ..
--rw-r--r--  1 east0000  east0000     0 Apr  4 19:07 file.txt
--rw-r--r--  1 east0000  east0000  4798 Apr  4 18:48 README.md
-east0000@0000 e1-1-workstation-setup % chmod 755 file.txt # 파일 권한 변경
-east0000@0000 e1-1-workstation-setup % ls -la # 파일 권한 확인
+drwxr-xr-x  4 east1111  east1111   128 Apr  4 19:07 .
+drwxr-xr-x  3 east1111  east1111    96 Apr  4 16:12 ..
+-rw-r--r--  1 east1111  east1111     0 Apr  4 19:07 file.txt
+-rw-r--r--  1 east1111  east1111  4798 Apr  4 18:48 README.md
+east1111@0000 e1-1-workstation-setup % chmod 755 file.txt # 파일 권한 변경
+east1111@0000 e1-1-workstation-setup % ls -la # 파일 권한 확인
 total 16
-drwxr-xr-x  4 east0000  east0000   128 Apr  4 19:07 .
-drwxr-xr-x  3 east0000  east0000    96 Apr  4 16:12 ..
--rwxr-xr-x  1 east0000  east0000     0 Apr  4 19:07 file.txt
--rw-r--r--  1 east0000  east0000  4798 Apr  4 18:48 README.md
+drwxr-xr-x  4 east1111  east1111   128 Apr  4 19:07 .
+drwxr-xr-x  3 east1111  east1111    96 Apr  4 16:12 ..
+-rwxr-xr-x  1 east1111  east1111     0 Apr  4 19:07 file.txt
+-rw-r--r--  1 east1111  east1111  4798 Apr  4 18:48 README.md
 ```
 
 ### 1.8 디렉토리 권한 변경
 
 ```bash
-east0000@0000 e1-1-workstation-setup % mkdir test # 디렉토리 생성
-east0000@0000 e1-1-workstation-setup % ls -ld test # 디렉토리 권한 확인(-d는 폴더 자체 정보만 표시)
-drwxr-xr-x  2 east0000  east0000  64 Apr  4 19:14 test 
-east0000@0000 e1-1-workstation-setup % chmod 700 test # 권한 변경
-east0000@0000 e1-1-workstation-setup % ls -ld test # 권한 확인
-drwx------  2 east0000  east0000  64 Apr  4 19:14 test
+east1111@0000 e1-1-workstation-setup % mkdir test # 디렉토리 생성
+east1111@0000 e1-1-workstation-setup % ls -ld test # 디렉토리 권한 확인(-d는 폴더 자체 정보만 표시)
+drwxr-xr-x  2 east1111  east1111  64 Apr  4 19:14 test 
+east1111@0000 e1-1-workstation-setup % chmod 700 test # 권한 변경
+east1111@0000 e1-1-workstation-setup % ls -ld test # 권한 확인
+drwx------  2 east1111  east1111  64 Apr  4 19:14 test
 ```
 `u+x` 소유자에게 실행권한 추가, `g-w` 그룹에서 쓰기 권한 제거, `o=r` 다른사람 권한 읽기만으로 지정, `a+r` 모두에게 읽기 권한 추가      
 `chmod -R 755 test` 폴더 안의 모든 파일/폴더까지 한 번에 변경
 
 ## 2. Docker 기본 명령어 & 실습
 
-### 2.1 Docker 기본 명령어 정리
+### 2.1.1 Docker 기본 명령어 정리
 
 | 명령어 | 기능 | 사용 예시 | 설명 |
 |--------|------|----------|------|
@@ -162,7 +163,7 @@ drwx------  2 east0000  east0000  64 Apr  4 19:14 test
 | `docker pull` | 이미지 다운로드 | `docker pull ubuntu` | Docker Hub에서 이미지 가져오기 |
 | `docker ps` | 실행 중 컨테이너 조회 | `docker ps` | 현재 실행 중인 컨테이너 확인 |
 | `docker ps -a` | 전체 컨테이너 조회 | `docker ps -a` | 중지된 컨테이너 포함 전체 조회 |
-| `docker run` | 컨테이너 실행 | `docker run ubuntu` | 이미지 기반으로 컨테이너 생성 및 실행 |
+| `docker run` | 컨테이너 실행 | `docker run [옵션] <이미지ID> [실행명령]` | 이미지 기반으로 컨테이너 생성 및 실행 |
 | `docker run -it` | 인터랙티브 실행 | `docker run -it ubuntu bash` | 터미널에서 직접 컨테이너 접근 |
 | `docker run -d` | 백그라운드 실행 | `docker run -d nginx` | 컨테이너를 백그라운드로 실행 |
 | `docker stop` | 컨테이너 중지 | `docker stop <컨테이너ID>` | 실행 중인 컨테이너 종료 |
@@ -171,13 +172,22 @@ drwx------  2 east0000  east0000  64 Apr  4 19:14 test
 | `docker logs` | 로그 확인 | `docker logs <컨테이너ID>` | 컨테이너 실행 로그 확인 |
 | `docker stats` | 리소스 사용 확인 | `docker stats` | CPU, 메모리 등 사용량 확인 |
 
+### 2.1.2 docker run 주요 옵션
+
+| 옵션 | 의미 | 설명 |
+|------|------|------|
+| `-d` | detached mode | 백그라운드 실행 |
+| `-it` | interactive terminal | 터미널 인터랙션 가능 |
+| `--name` | 컨테이너 이름 지정 | 컨테이너 식별을 쉽게 함 |
+| `-p` | 포트 매핑 | 호스트:컨테이너 포트 연결 |
+| `--rm` | 자동 삭제 | 종료 시 컨테이너 자동 삭제 |
 
 ### 2.2 Docker 버전 및 상태 확인
 
  ```bash
-east0000@c1111 e1-1-workstation-setup % docker --version # 도커 버전 확인
+east1111@c1111 e1-1-workstation-setup % docker --version # 도커 버전 확인
 Docker version 28.5.2, build ecc6942
-east0000@c1111 e1-1-workstation-setup % docker info # 도커 엔진 상태 확인
+east1111@c1111 e1-1-workstation-setup % docker info # 도커 엔진 상태 확인
 Client:
  Version:    28.5.2
  Context:    orbstack
@@ -186,9 +196,11 @@ Client:
   buildx: Docker Buildx (Docker Inc.)
     Version:  v0.29.1
                     ----이하생략----
-east0000@c1111 e1-1-workstation-setup % docker images # 이미지 목록 (현재 없음)
+
+east1111@c1111 e1-1-workstation-setup % docker images # 이미지 목록 (현재 없음)
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-east0000@c1111 e1-1-workstation-setup % docker ps -a  # 컨테이너 목록 조회 (-a: 종료된 것 포함) (현재 없음)
+
+east1111@c1111 e1-1-workstation-setup % docker ps -a  # 컨테이너 목록 조회 (-a: 종료된 것 포함) (현재 없음)
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 - `docker info` 명령 시  
@@ -200,12 +212,12 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ### 2.3 hello-world 실행
 
  ```bash
-east0000@c1111 e1-1-workstation-setup % docker run hello-world # hello-world 실행
+east1111@c1111 e1-1-workstation-setup % docker run hello-world # hello-world 실행
 ---생략---
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ---생략---
-east0000@c1111 e1-1-workstation-setup % docker ps -a # 컨테이너 실행 결과 확인
+east1111@c1111 e1-1-workstation-setup % docker ps -a # 컨테이너 실행 결과 확인
 CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
 395f6b60557b   hello-world   "/hello"   3 minutes ago   Exited (0) 3 minutes ago             hungry_rosalind
 ```
@@ -213,7 +225,7 @@ CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                  
 ### 2.4 Ubuntu 컨테이너 실행
 
  ```bash
-east0000@c1111 e1-1-workstation-setup % docker run -it ubuntu bash # 우분투 컨테이너 실행 및 내부 진입(-it: 터미널 인터랙션, bash: 컨테이너 내부 쉘 실행)
+east1111@c1111 e1-1-workstation-setup % docker run -it ubuntu bash # 우분투 컨테이너 실행 및 내부 진입(-it: 터미널 인터랙션, bash: 컨테이너 내부 쉘 실행)
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
 ...........
@@ -224,7 +236,7 @@ root@1234:/# echo "hello docker"
 hello docker
 root@1234:/# exit # 컨테이너 종료 (bash 종료시 함께 종료)
 exit
-east0000@c1111 e1-1-workstation-setup % docker ps -a # 종료된 컨테이너 확인 *exited(0): 정상 종료 의미
+east1111@c1111 e1-1-workstation-setup % docker ps -a # 종료된 컨테이너 확인 *exited(0): 정상 종료 의미
 CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                     PORTS     NAMES
 1234   ubuntu        "bash"     27 seconds ago   Exited (0) 5 seconds ago             exciting_goldwasser
 395f6b60557b   hello-world   "/hello"   6 minutes ago    Exited (0) 6 minutes ago             hungry_rosalind            hungry_rosalind
@@ -245,7 +257,64 @@ CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                 
 | 삭제 시 영향 | 삭제해도 기존 컨테이너 유지 가능 | 삭제하면 실행 상태 사라짐 |
 - `Dockerfile` -> `build`: 이미지생성 -> `Image` -> `run`: 컨테이너 생성 -> `Container`
 
+
 ## 3. Dockerfile 기반 커스텀 이미지 제작
+
+- 이미지는 실행을 위한 템플릿이며, 컨테이너는 해당 이미지를 실제로 실행한 인스턴스. 
+- 본 실습에서는 `Dockerfile`로 이미지를 빌드한 뒤, 이를 기반으로 웹 서버 컨테이너를 실행.
+
+### 사용한 베이스 이미지
+- `nginx:alpine`
+- 경량 웹 서버 이미지를 베이스로 사용하여 정적 HTML 페이지를 서빙하도록 구성
+
+### 커스텀 포인트
+- `FROM nginx:alpine`: 기존 NGINX 이미지를 베이스로 사용
+- `COPY src/index.html /usr/share/nginx/html/index.html` : 기본 웹 페이지를 내가 만든 HTML로 교체
+
+### 파일 생성 및 빌드
+
+ ```bash
+east1111@1234 e1-1-workstation-setup % mkdir src              # src 디렉토리 생성
+east1111@1234 e1-1-workstation-setup % touch src/index.html   # index.html 파일 생성
+east1111@1234 e1-1-workstation-setup % touch Dockerfile       # dockerfile 생성
+east1111@1234 e1-1-workstation-setup % docker build -t e1-1-custom-web . # 빌드
+[+] Building 7.4s (7/7) FINISHED                                                                               docker:orbstack
+ => [internal] load build definition from Dockerfile                                                                      0.2s
+ => => transferring dockerfile: 265B                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                                                           2.7s
+ => [internal] load .dockerignore                                                                                         0.1s
+ => => transferring context: 2B                                                                                           0.0s
+ => [internal] load build context                                                                                         0.2s
+ => => transferring context: 373B                                                                                         0.0s
+east1111@1234 e1-1-workstation-setup % docker images # 이미지 확인
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+e1-1-custom-web   latest    6f79f4492326   5 minutes ago   62.2MB
+hello-world       latest    e2ac70e7319a   11 days ago     10.1kB
+ubuntu            latest    f794f40ddfff   5 weeks ago     78.1MB
+```
+
+### 컨테이너 실행
+```bash
+east1111@1234 e1-1-workstation-setup % docker run -d -p 8080:80 --name e1-1-web e1-1-custom-web # 이미지 기반 컨테이너 실행
+ae686c88cbe8a1bdfc7a80d5c6f42e8446ea92f996284d4ac653113de7662c08
+east1111@1234 e1-1-workstation-setup % curl http://localhost:8080 # curl 결과를 통해 정상 동작 확인
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codyssey E1-1</title>
+</head>
+<body>
+  <h1>Hello, Codyssey!</h1>
+  <p>This page is served from a custom Docker image based on nginx.</p>
+</body>
+</html>%   
+.........
+```
+### http://localhost:8080 접속 화면 
+![alt text](image.png)
+
 
 
 ## 4. 포트 매핑
