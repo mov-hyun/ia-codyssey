@@ -176,6 +176,8 @@ drwx------  2 east0000  east0000  64 Apr  4 19:14 test
 ### 9. 트러블 슈팅
 
 #### 1. 히스토리 확장(History Expansion)으로 오인
+| 구분 | 내용 |
+|------|------|
 | **문제** | `echo "hello codyssey!" > hello.txt` 입력 시 `dquote>` 가 나타나며 명령이 실행되지 않음 |
 | **원인** | `!"` 에서 `!` 와 `"` 가 붙어있어 쉘이 닫는 따옴표를 제대로 인식하지 못함 |
 | **해결** | 큰따옴표 `"` 대신 작은따옴표 `'` 사용: `echo 'hello codyssey!' > hello.txt` |
