@@ -15,7 +15,7 @@
 - [9. Docker Compose](#9-docker-compose)
 - [10. 트러블 슈팅](#10-트러블-슈팅)
 
-
+------
 
 #### 실행 환경
 - OS:
@@ -34,12 +34,15 @@
 - [ ] 볼륨 영속성
 - [ ] Git 설정 + VSCode GitHub 연동
 
-
-
+------
 
 ### 1. 터미널 기본 명령어
 
 ```bash
+# 현재 위치 확인
+$ pwd
+/Users/eastsae7567/ia-codyssey/e1/e1-1-workstation-setup
+
 
 ```
 
