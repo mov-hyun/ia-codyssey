@@ -12,7 +12,10 @@ ia-codyssey/
 │   └── images/
 ├── e1/
 │   ├── e1-1-workstation-setup/
-│   │   └── README.md
+│   │   ├── README.md
+│   │   ├── Dockerfile
+│   │   └── src/
+│   │       └── index.html
 │   ├── e1-2/
 │   │   ├── README.md
 │   │   └── src/
