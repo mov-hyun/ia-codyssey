@@ -439,15 +439,45 @@ persistent data
 
 ## 6. Git 설정 및 연동
 
+```bash
+east1111@1234 e1-1-workstation-setup % git config --list
+...
+user.name=mov-hyun
+user.email=east####@gmail.com
+...
+remote.origin.url=https://github.com/mov-hyun/ia-codyssey.git
+...
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+...
+```
+
+### 깃 커밋 방법
+```bash
+git add .
+git commit -m "커밋 메시지"
+git push
+```
+
 
 ## 7. Docker Compose
 
 
 ## 8. 트러블 슈팅
 
-### [1] 히스토리 확장(History Expansion)으로 오인
+### 8.1 히스토리 확장(History Expansion)으로 오인
+
 | 구분 | 내용 |
 |------|------|
 | **문제** | `echo "hello codyssey!" > hello.txt` 입력 시 `dquote>` 가 나타나며 명령이 실행되지 않음 |
 | **원인** | `!"` 에서 `!` 와 `"` 가 붙어있어 쉘이 닫는 따옴표를 제대로 인식하지 못함 |
 | **해결** | 큰따옴표 `"` 대신 작은따옴표 `'` 사용: `echo 'hello codyssey!' > hello.txt` |
+
+
+### 8.2 Git 중첩 저장소 문제
+
+| 구분 | 내용 |
+|------|------|
+| **문제** | 하위 폴더에서 `git init` 실행 후 Git 설정이 사라짐 |
+| **원인** | 기존 저장소 내부에 새로운 Git 저장소(.git)가 생성됨 |
+| **해결** | 하위 `.git` 삭제 (`rm -rf .git`) 후 상위 저장소 사용 |
