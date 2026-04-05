@@ -29,10 +29,10 @@
 - [x] 권한 변경 실습
 - [x] Docker 설치/점검
 - [x] hello-world 실행
-- [ ] Dockerfile 빌드/실행
-- [ ] 포트 매핑 접속(2회)
-- [ ] 바인드 마운트 반영
-- [ ] 볼륨 영속성
+- [x] Dockerfile 빌드/실행
+- [x] 포트 매핑 접속(2회)
+- [x] 바인드 마운트 반영
+- [x] 볼륨 영속성
 - [ ] Git 설정 + VSCode GitHub 연동
 
 ------
@@ -409,13 +409,33 @@ east1111@1234 e1-1-workstation-setup % curl http://localhost:8082
 
 #### html 수정
 ```bash
-east1111@1234 e1-1-workstation-setup % echo '<h1>Bind Mount Updated!</h1>' > src/index.html
-east1111@1234 e1-1-workstation-setup % curl http://localhost:8082                          
+east1111@1234 e1-1-workstation-setup % echo '<h1>Bind Mount Updated!</h1>' > src/index.html # 코드 수정
+east1111@1234 e1-1-workstation-setup % curl http://localhost:8082                           # 코드 반영 확인
 <h1>Bind Mount Updated!</h1>
 ```
 #### 바로 적용된 모습
 ![alt text](bindmount2.png)
 - 컨테이너 재시작 없이 수정 즉시 서비스에 반영되는 점이 특징
+
+### 5.3 볼륨 영속성
+
+- 컨테이너를 지워도 볼륨에 저장한 데이터는 보존
+
+```bash
+east1111@1234 e1-1-workstation-setup % docker volume create my-volume # my-volume 볼륨 생성 (컨테이너 안이 아닌 도커 엔진이 별도 관리)
+my-volume
+east1111@1234 e1-1-workstation-setup % docker run -it --name volume-test -v my-volume:/data ubuntu bash # 컨테이너 생성 및 볼륨 연결
+root@fb3b8e1b3211:/# echo 'persistent data' > /data/file.txt # 파일을 볼륨에 저장
+root@fb3b8e1b3211:/# cat /data/file.txt # 파일 확인
+persistent data
+root@fb3b8e1b3211:/# exit # 컨테이너 종료
+exit
+east1111@1234 e1-1-workstation-setup % docker rm -f volume-test # 컨테이너 강제 삭제 
+volume-test
+east1111@1234 e1-1-workstation-setup % docker run -it --name volume-test-2 -v my-volume:/data ubuntu bash # 두번째 컨테이ㅣ너 생성 및 볼륨 연결
+root@5010f4289955:/# cat /data/file.txt # 동일한 파일 확인 
+persistent data
+```
 
 ## 6. Git 설정 및 연동
 
