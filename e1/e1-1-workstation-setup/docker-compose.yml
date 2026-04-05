@@ -1,0 +1,11 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "${PORT}:80"
+    depends_on:
+      - echo
+
+  echo:
+    image: hashicorp/http-echo
+    command: ["-text=hello from echo service"]
